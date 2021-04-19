@@ -1,0 +1,33 @@
+---
+title: "What is Git?"
+output: 
+  html_document:
+    theme: spacelab
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+---
+```{r setup, include=FALSE}
+devtools::load_all()
+```
+
+
+### Okay, cut to the chase, WTF is GIT? 
+
+Haven't we all been in that situation where our folder with all the code files for our project looks a little bit like this?: 
+
+<center>
+![](images/files_no_vc.png)
+</center>
+
+Keeping track of all changes we make in our work is hard! Sometimes we have multiple files and the difference between them only falls to one or two lines of code that actually do the trick and make our model work. **Why save an entire new file if only a line or two are different?** Is there a way to only record these changes? Funny you ask! There is! And it is called **Version Control**.
+
+**Version control** is a class of system used mostly for software engineering that allows us to manage changes within our software and **GIT** is one of these systems. 
+
+### But how does GIT work? 
+
+A good way to understand how **GIT** works is visualizing it with a graph structure. 
+
+### Could you give an example? 
+
+### I'm convinced! How do I get GIT in my computer? 
