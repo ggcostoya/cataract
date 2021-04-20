@@ -12,7 +12,7 @@ devtools::load_all()
 ```
 
 
-### Okay, cut to the chase, WTF is GIT? 
+#### **Okay, cut to the chase, WTF is GIT?** 
 
 Haven't we all been in that situation where our folder with all the code files for our project looks a little bit like this?: 
 
@@ -24,10 +24,24 @@ Keeping track of all changes we make in our work is hard! Sometimes we have mult
 
 **Version control** is a class of system used mostly for software engineering that allows us to manage changes within our software and **GIT** is one of these systems. 
 
-### But how does GIT work? 
+#### **But how does GIT work?** 
 
-A good way to understand how **GIT** works is visualizing it with a graph structure. 
+The first thing to understand how **GIT** works is the concept of a **Commit**. A **commit is the recording any modifications you make to existing files** generating in the process a new version of the original/s. A commit can include a single or multiple files even full folders and it accounts for not only modifications but also additions or deletions within the file. Below I add an graph schematic of what a commit is, for now it is quite simple, but I'll add a bunch of levels of complexity so be sure you are rock solid before jumping to the next step. 
 
-### Could you give an example? 
+<center>
+![](images/vc_commit.png){width=500}
+</center>
 
-### I'm convinced! How do I get GIT in my computer? 
+The next important concept to understand is **Repository**. A **repository is the project that is being held under version control, all the files or folders whose modifications will be tracked**. A repository is equivalent to your entire project. 
+
+Complementarily, another improtant idea is that of the **Push**. A **push is a single or multiple commits that establish a new version of your repository**. 
+
+Two other important concepts to understand here are **Repository** and he **Push**. A push is a 
+
+<center>
+![](images/vc_push.png){width=600}
+</center>
+
+#### **Could you give a real world example?** 
+
+#### **I'm convinced! How do I get GIT on my device?** 
