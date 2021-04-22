@@ -39,24 +39,18 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/git.html">What is Git?</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
+<li class="dropdown-header">R packages</li>
+<li class="dropdown-header">What is GitHub?</li>
+<li class="dropdown-header">GitHub Pages</li>
 <li>
-      <a href="../articles/git.html">What is Git?</a>
-    </li>
-  </ul>
+  <a href="../reference/index.html">Functions</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
@@ -102,22 +96,82 @@
 <center>
 <img src="images/vc_commit.png" width="500">
 </center>
-<p>The next important concept to understand is <strong>Repository</strong>. A <strong>repository is the project that is being held under version control, all the files or folders whose modifications will be tracked</strong>. A repository is equivalent to your entire project.</p>
-<p>Complementarily, another improtant idea is that of the <strong>Push</strong>. A <strong>push is a single or multiple commits that establish a new version of your repository</strong>.</p>
-<p>Two other important concepts to understand here are <strong>Repository</strong> and he <strong>Push</strong>. A push is a</p>
+<p>The next important concept to understand is <strong>Repository</strong>. A <strong>repository is the project that is being held under version control, all the files or folders whose modifications will be tracked</strong>. A repository is equivalent to your entire project. Complementarily, another improtant idea is that of the <strong>Push</strong>. A <strong>push is a single or multiple commits that establish a new version of your repository</strong>. Below I show a schematic of how this works:</p>
 <center>
-<img src="images/vc_push.png" width="600">
+<img src="images/vc_push.png" width="600"><br>
 </center>
+<figcaption>
+Let’s say that we are developing a <strong>version control repository</strong> called <em>Fire Saga</em>. Within it we have two files (file_1.R and file_2.R). We make a small modification to them both, saving each modification as a new <strong>commit</strong>. Once we consider that there are enough commits for a significant change in our project we <strong>push</strong> them to create a new version of the <em>Fire Saga</em> repository.
+</figcaption><p><br></p>
+<p>All <strong>Pushes</strong> will be recorded within your repository and you’ll be able to access them if you mess something up and want to go back to a previous version of your work. If that happens <strong>the action of recovering a version of your repository</strong> is called <strong>Pull</strong></p>
+<p>However, what if you are exploring a new model or treating your data in a way that you are not really sure if it will work or not. GIT offers an awesome solution for that and it is called <strong>Branching</strong>. You can create a new <strong>Branch</strong> from your original repository and try out stuff, if it works then awesome you can <strong>Merge</strong> the brach your “let’s try this” branch with your main branch and continue working with your repository as usual. Here’s how it works:</p>
+<center>
+<img src="images/vc_branch&amp;merge.png"><br>
+</center>
+<figcaption>
+Imagine that you keep working on the <em>Fire Saga</em> repository. All updates to the project you make are saved in a <strong>master branch</strong> (indicated in gold above because, why not?) where you have all versions of your repository. One day you wake up with a bold idea but you are not sure if it will work, to try it out you create a <strong>branch</strong> (Branch #1) above to see test that out. Unfortunately it doesn’t work but no problem, you can always <strong>pull</strong> the previous version of your project and forget about it. Two days later you are like “Wait a minute! I know what I was missing” so you create another <strong>branch</strong> to see if your new idea works (Branch #2). It worked! Now you wanna keep that as your main working line. To do that, you just <strong>merge</strong> your branch with the master branch and you create a new version of the project! Awesome!
+</figcaption><p><br></p>
 </div>
 <div id="could-you-give-a-real-world-example" class="section level4">
 <h4 class="hasAnchor">
 <a href="#could-you-give-a-real-world-example" class="anchor"></a><strong>Could you give a real world example?</strong>
 </h4>
+<p>Okay let’s visualize all this stuff about <strong>GIT</strong> with a quick example using R. Let’s say that we are working on a function that tells us how long will it take for Valentina to make a group chat about a social event depending on the number of people potentially participating:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">time_till_val_group</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n_people</span><span class="op">)</span><span class="op">{</span>
+  
+  <span class="co"># linear relationship between time and people </span>
+  <span class="va">time_till_group</span> <span class="op">&lt;-</span> <span class="fl">10</span> <span class="op">-</span> <span class="fl">0.1</span><span class="op">*</span><span class="va">n_people</span>
+  
+  <span class="co"># return time until chat group</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">time_till_group</span><span class="op">)</span>
+  
+<span class="op">}</span></code></pre></div>
+<p>This function predicts that time until Val makes a chat group decreases linearly with the number of people participating. We can take a look at it in action:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># exemple values for the number of people participating</span>
+<span class="va">participants</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">50</span>, by <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+
+<span class="co"># predicted time until chat according to the function earlier </span>
+<span class="va">time</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/time_till_val_group.html">time_till_val_group</a></span><span class="op">(</span><span class="va">participants</span><span class="op">)</span>
+
+<span class="co"># let's check that in a plot </span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span><span class="op">(</span><span class="va">participants</span>, <span class="va">time</span>, type <span class="op">=</span> <span class="st">"l"</span>, lwd <span class="op">=</span> <span class="st">"2"</span>, 
+     xlab <span class="op">=</span> <span class="st">"Number of Participants"</span>, ylab <span class="op">=</span> <span class="st">"Time until Val makes chat group (seconds)"</span><span class="op">)</span></code></pre></div>
+<p><img src="git_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;"></p>
+<p><strong>I’m sure we can all agree that this relationship makes absolutely no sense! Valentina takes way less time than this to make a chat group for social events!</strong> We need to write a better function. What about an exponential relationship?:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">time_till_val_group</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n_people</span><span class="op">)</span><span class="op">{</span>
+  
+  <span class="co"># exponential relationship between time and people </span>
+  <span class="va">time_till_group</span> <span class="op">&lt;-</span> <span class="va">n_people</span><span class="op">^</span><span class="op">-</span><span class="fl">0.9</span> <span class="co">#### LINE CHANGING</span>
+  
+  <span class="co"># return time until chat group</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">time_till_group</span><span class="op">)</span>
+  
+<span class="op">}</span></code></pre></div>
+<p>Let’s see how that looks now:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># calculate predicted times again</span>
+<span class="va">time</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/time_till_val_group.html">time_till_val_group</a></span><span class="op">(</span><span class="va">participants</span><span class="op">)</span>
+
+<span class="co"># let's check that in a plot </span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span><span class="op">(</span><span class="va">participants</span>, <span class="va">time</span>, type <span class="op">=</span> <span class="st">"l"</span>, lwd <span class="op">=</span> <span class="st">"2"</span>, 
+     xlab <span class="op">=</span> <span class="st">"Number of Participants"</span>, ylab <span class="op">=</span> <span class="st">"Time until Val makes chat group (seconds)"</span><span class="op">)</span></code></pre></div>
+<p><img src="git_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;"></p>
+<p><strong>Now that’s much better! We are in the miliseconds range when we have 20 or more participants! Much more close to reality</strong>. Instead of saving a whole new file with a new version of Val’s function we can just <strong>commit</strong> and if she get’s annoyed we can always <strong>pull</strong> back the older (<em>less realistic</em>) version of the file. Below I represent this process schematically, notice in the right panel that the changes in the function are highlited in red. Those changes are the ones <strong>GIT</strong> will record for you.</p>
+<br><center>
+<img src="images/vc_val_function.png">
+</center>
+<p><br></p>
 </div>
 <div id="im-convinced-how-do-i-get-git-on-my-device" class="section level4">
 <h4 class="hasAnchor">
 <a href="#im-convinced-how-do-i-get-git-on-my-device" class="anchor"></a><strong>I’m convinced! How do I get GIT on my device?</strong>
 </h4>
+<p>To get <strong>GIT</strong> on your device just download it from this link: <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" class="uri">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
+<p>You can also learn more about <strong>GIT</strong> and version control in this link: <a href="https://git-scm.com/about/branching-and-merging" class="uri">https://git-scm.com/about/branching-and-merging</a></p>
+<p>On other pages within this repository you will learn how to integrate R with Git and GitHub! Your journey into awesomeness has just begun!</p>
 </div>
   </div>
 

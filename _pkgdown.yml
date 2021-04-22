@@ -1,0 +1,24 @@
+url: https://github.com/ggcostoya/cataract
+home:
+  links:
+  - text: Browse source code at
+    href: https://github.com/ggcostoya/cataract
+template:
+  params:
+  bootswatch: sandstone
+toc:
+  depth: 3
+navbar:
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+  - text: What is Git?
+    href: articles/git.html
+  - text: R packages
+    href:
+  - text: What is GitHub?
+    href:
+  - text: GitHub Pages
+    href:
+  - text: Functions
+    href: reference/index.html
