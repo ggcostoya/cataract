@@ -1,7 +1,21 @@
 # Project **Cataract**
-### A quick guide on how to use Git, GitHub, R packages and GitHub pages to tidy keep your progess tracked and tidy as well as make your results look kewl.
+**A quick guide on how to use Git, R packages, GitHub and GitHub pages to tidy keep your progess tracked and tidy as well as make your results look kewl.**
+
+
 This GitHub repository contains all extra resources complementary to the EcoLunch talk on April 30th 2021, an initiative of the EECB program at the
-University of Nevada, Reno. Below is a useful (maybe not all parts are as useful) guide of the contents of this repository, for more detail go to 
+University of Nevada, Reno. Below is a guide of the contents of this repository: 
+
+- **What is Git?**: 
+- **R packages**:
+- **What is GitHub?**:
+- **GitHub Pages**:
+- **Manual**:
+- **Resources**:
+- **Functions**:
+
+
+
+If you are checking this out on GitHub go to ggcostoya.github.io/cataract/index to visit all
 
 ## Why *Cataract*? 
 
