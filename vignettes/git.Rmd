@@ -12,7 +12,7 @@ devtools::load_all()
 ```
 
 
-#### **Okay, cut to the chase, WTF is GIT?** 
+### **Okay, cut to the chase, WTF is GIT?** 
 
 Haven't we all been in that situation where our folder with all the code files for our project looks a little bit like this?: 
 
@@ -24,7 +24,7 @@ Keeping track of all changes we make in our work is hard! Sometimes we have mult
 
 **Version control** is a class of system used mostly for software engineering that allows us to manage changes within our software and **GIT** is one of these systems. 
 
-#### **But how does GIT work?** 
+### **But how does GIT work?** 
 
 The first thing to understand how **GIT** works is the concept of a **Commit**. A **commit is the recording any modifications you make to existing files** generating in the process a new version of the original/s. A commit can include a single or multiple files even full folders and it accounts for not only modifications but also additions or deletions within the file. Below I add an graph schematic of what a commit is, for now it is quite simple, but I'll add a bunch of levels of complexity so be sure you are rock solid before jumping to the next step. 
 
@@ -55,7 +55,7 @@ Imagine that you keep working on the *Fire Saga* repository. All updates to the 
 </figcaption> 
 <br> 
 
-#### **Could you give a real world example?** 
+### **Could you give a real world example?** 
 
 Okay let's visualize all this stuff about **GIT** with a quick example using R. Let's say that we are working on a function that tells us how long will it take for Valentina to make a group chat about a social event depending on the number of people potentially participating:
 
@@ -118,7 +118,7 @@ plot(participants, time, type = "l", lwd = "2",
 </center>
 <br>
 
-#### **I'm convinced! How do I get GIT on my device?** 
+### **I'm convinced! How do I get GIT on my device?** 
 
 To get **GIT** on your device just download it from this link: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
