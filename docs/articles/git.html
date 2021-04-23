@@ -46,7 +46,9 @@
 <li>
   <a href="../articles/git.html">What is Git?</a>
 </li>
-<li class="dropdown-header">R packages</li>
+<li>
+  <a href="../articles/r_packages.html">R packages</a>
+</li>
 <li class="dropdown-header">What is GitHub?</li>
 <li class="dropdown-header">GitHub Pages</li>
 <li>
@@ -77,10 +79,10 @@
 
     
     
-<div id="okay-cut-to-the-chase-wtf-is-git" class="section level4">
-<h4 class="hasAnchor">
+<div id="okay-cut-to-the-chase-wtf-is-git" class="section level3">
+<h3 class="hasAnchor">
 <a href="#okay-cut-to-the-chase-wtf-is-git" class="anchor"></a><strong>Okay, cut to the chase, WTF is GIT?</strong>
-</h4>
+</h3>
 <p>Haven’t we all been in that situation where our folder with all the code files for our project looks a little bit like this?:</p>
 <center>
 <img src="images/files_no_vc.png">
@@ -88,10 +90,10 @@
 <p>Keeping track of all changes we make in our work is hard! Sometimes we have multiple files and the difference between them only falls to one or two lines of code that actually do the trick and make our model work. <strong>Why save an entire new file if only a line or two are different?</strong> Is there a way to only record these changes? Funny you ask! There is! And it is called <strong>Version Control</strong>.</p>
 <p><strong>Version control</strong> is a class of system used mostly for software engineering that allows us to manage changes within our software and <strong>GIT</strong> is one of these systems.</p>
 </div>
-<div id="but-how-does-git-work" class="section level4">
-<h4 class="hasAnchor">
+<div id="but-how-does-git-work" class="section level3">
+<h3 class="hasAnchor">
 <a href="#but-how-does-git-work" class="anchor"></a><strong>But how does GIT work?</strong>
-</h4>
+</h3>
 <p>The first thing to understand how <strong>GIT</strong> works is the concept of a <strong>Commit</strong>. A <strong>commit is the recording any modifications you make to existing files</strong> generating in the process a new version of the original/s. A commit can include a single or multiple files even full folders and it accounts for not only modifications but also additions or deletions within the file. Below I add an graph schematic of what a commit is, for now it is quite simple, but I’ll add a bunch of levels of complexity so be sure you are rock solid before jumping to the next step.</p>
 <center>
 <img src="images/vc_commit.png" width="500">
@@ -112,10 +114,10 @@ Let’s say that we are developing a <strong>version control repository</strong>
 Imagine that you keep working on the <em>Fire Saga</em> repository. All updates to the project you make are saved in a <strong>master branch</strong> (indicated in gold above because, why not?) where you have all versions of your repository. One day you wake up with a bold idea but you are not sure if it will work, to try it out you create a <strong>branch</strong> (Branch #1) above to see test that out. Unfortunately it doesn’t work but no problem, you can always <strong>pull</strong> the previous version of your project and forget about it. Two days later you are like “Wait a minute! I know what I was missing” so you create another <strong>branch</strong> to see if your new idea works (Branch #2). It worked! Now you wanna keep that as your main working line. To do that, you just <strong>merge</strong> your branch with the master branch and you create a new version of the project! Awesome!
 </figcaption><p><br></p>
 </div>
-<div id="could-you-give-a-real-world-example" class="section level4">
-<h4 class="hasAnchor">
+<div id="could-you-give-a-real-world-example" class="section level3">
+<h3 class="hasAnchor">
 <a href="#could-you-give-a-real-world-example" class="anchor"></a><strong>Could you give a real world example?</strong>
-</h4>
+</h3>
 <p>Okay let’s visualize all this stuff about <strong>GIT</strong> with a quick example using R. Let’s say that we are working on a function that tells us how long will it take for Valentina to make a group chat about a social event depending on the number of people potentially participating:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">time_till_val_group</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n_people</span><span class="op">)</span><span class="op">{</span>
@@ -165,10 +167,10 @@ Imagine that you keep working on the <em>Fire Saga</em> repository. All updates 
 </center>
 <p><br></p>
 </div>
-<div id="im-convinced-how-do-i-get-git-on-my-device" class="section level4">
-<h4 class="hasAnchor">
+<div id="im-convinced-how-do-i-get-git-on-my-device" class="section level3">
+<h3 class="hasAnchor">
 <a href="#im-convinced-how-do-i-get-git-on-my-device" class="anchor"></a><strong>I’m convinced! How do I get GIT on my device?</strong>
-</h4>
+</h3>
 <p>To get <strong>GIT</strong> on your device just download it from this link: <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" class="uri">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
 <p>You can also learn more about <strong>GIT</strong> and version control in this link: <a href="https://git-scm.com/about/branching-and-merging" class="uri">https://git-scm.com/about/branching-and-merging</a></p>
 <p>On other pages within this repository you will learn how to integrate R with Git and GitHub! Your journey into awesomeness has just begun!</p>
@@ -177,7 +179,9 @@ Imagine that you keep working on the <em>Fire Saga</em> repository. All updates 
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

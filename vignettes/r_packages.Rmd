@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### **Aim of the Game**
+### Aim of the Game
 
 Have you ever been in that situation where your R script is longer than the Wall of China? Something like: 
 
@@ -51,7 +51,7 @@ model <- lm(horn_length ~ weight, actual_data)
 
 That is waaay too long and sooo frustrating! But worry no more! There is a way to solve this and it is treating your entire project as an **R package**. Let me explain
 
-### **What is an R package?**
+### What is an R package?
 
 An **R package** is a type of **R project**, in other words, a folder you set up and in which you can do all your project work. An R package works exactly like those packages you install and load every time you load a script (i.e `ggplot2`, `nlmer` etc.) when you need a function that does something useful. However, this time, you will be the person behind the scenes! A package can include, **functions**, **data**, and all kinds of **scripts** to process or document your work. As an example, I have developed the package `cataract`. I can load this package and with it I can specify other packages that need to be both installed and loaded with it: 
 
@@ -73,7 +73,7 @@ head(meerkats)
 
 And this is just the tip of the iceberg! 
 
-### **Creating your own R package**
+### Creating your own R package
 
 *Okay dude but how in the hell do you actually do this?* No problem! Here is a step by step tutorial for you: 
 
@@ -114,15 +114,7 @@ Which will open this:
 
 Three things to consider here: 
 
-* 1. **Name of your package**: Package naming needs to meet certain formalities. In this link: https://r-pkgs.org/workflows101.html?q=namin#naming you will find them as well as some pragmatic advice on naming. My personal recommendation is to name your packages with a single word that is descriptive enough and that motivates you to work on it. What I do is name my packages using extremely geeky associations which are related with what the package is about in a funny way. Here are some of the projects in the form of R packages I've worked, been working and will be working on. 
-
-| Idea Stage | In Development | Beta Stage | Finished/ Published |
-|   :----:   |    :----:      |   :----:   |        :----:       |
-| leonov     | limon          | cataract   | everdeen            |
-| misfit     | cersei         |            | calypso             |
-| coyote     | kurama         |            |                     |
-|            | vympel         |            |                     | 
-
+* 1. **Name of your package**: Package naming needs to meet certain formalities. In this link: https://r-pkgs.org/workflows101.html?q=namin#naming you will find them as well as some pragmatic advice on naming. My personal recommendation is to name your packages with a single word that is descriptive enough and that motivates you to work on it. What I do is name my packages using extremely geeky associations which are related with what the package is about in a funny way. 
 
 * 2. **Make sure you create the folder for the package on a directory you know!**: You can set it up on your Desktop, that's fine! But remember it is there!. What I recommend, as kind of a technological tidyness nerd is to create a specialized folder for `projects` where you can locate all your work!
 
@@ -130,7 +122,7 @@ Three things to consider here:
 
 Once you are done, click on `Create Project` and KABOOM! Congrats! You've created your first R package, now it's time to see what is going on here. 
 
-### **Elements of your R package**
+### Elements of your R package
 
 As soon as you create your R package you will see that a bunch of folders automatically appear on the folder for it. You can see these in the lower right-hand panel in Rstudio where it says `Files`, it should look something like this: 
 
@@ -142,9 +134,9 @@ As soon as you create your R package you will see that a bunch of folders automa
 
 Among these files and documents the ones you got to pay attention to are: 
 
-#### **kurama.Rproj**
+#### **.Rproj**
 
-This is an example R package I created called `kurama`. This `kurama.Rproj` file is the source to all of it. If you go to the folder where you created the package and click on it an R session with your project name will appear. Notice also that on the top right hand side it doesn't say `Project:(None)` anymore! The name of your package should appear up there. 
+The `.Rproj` file is the source to all of your R packge. In this case, as an example, I've created the `kurama` package so in the picture above you see `kurama.Rproj`. When you create projects of your own the `.Rproj` file will be your package's name. If you go to the folder where you created the package and click on it an R session with your package name will appear. Notice also that on the top right hand side it doesn't say `Project:(None)` anymore! The name of your package should appear up there. 
 
 #### **DESCRIPTION**
 
@@ -261,9 +253,66 @@ get_mean_feeds(brood_id_I_want = "bfb0802")
 head(data.frame(obs_feeds = sapply(as.vector(levels(meerkats$brood_id)), get_mean_feeds)))
 ```
 
-If you check the `R` folder for the `cataract` package here: https://github.com/ggcostoya/cataract/tree/master/R, you'll see that one of the files there is for the `extract_mean_feeds` function. If it is there I can use it any time `cataract` is loaded! 
+If you check the `R` folder for the `cataract` package here: https://github.com/ggcostoya/cataract/tree/master/R , you'll see that one of the files there is for the `extract_mean_feeds` function. If it is there I can use it any time `cataract` is loaded! 
+
+#### **.gitignore**
+
+The `.gitignore` file will specify which files or folders you don't want **GIT** to keep track of version-control style. For example, a good addition to `.gitignore` is the `.Rproj` file, it will never change, why keep track of it? 
+
+These are the basic things you need to have, but to upgrade your R package to the next level you'll need to create the following folders: 
+
+#### **raw_data**
+
+In the `raw_data` folder you will save all data that comes fresh from the field or the lab. I am talking about those messy excels, .txt files, .csv files anything! All in there. The raw data folder will also contain what I call **cleaning scripts**. These will have all the data processing, filtering and cleaning necessary for your raw data to become the actual data you'll use in your scripts. If you go to: https://github.com/ggcostoya/cataract/tree/master/raw_data, you'll be able to see the raw `meerkats` data I've been using for this project and how using this script: 
+
+```{r, eval = FALSE}
+## Meerkat data preparation
+
+# load here package
+library(here)
+
+# load the meerkat data
+meerkats <- read.table(file.path(here(), "raw_data", "meerkats.txt"))
+
+# rename some columns
+meerkats <- data.frame(obs_feeds = meerkats$observedNfeeds,
+                       obs_hours = meerkats$observedhours,
+                       r_2_brood = meerkats$relatedness2brood,
+                       group_id = meerkats$socialgroupID,
+                       brood_id = meerkats$broodID,
+                       delta_mass = meerkats$massChange)
+
+# save meerkat data in "data" folder
+save(meerkats, file = file.path(here::here(), "data", "meerkats.RData"))
+
+```
+
+I read it, rename variables and save it in the `data` folder. 
+
+#### **data**
+
+The `data` folder will contain the actual data you will use in your scripts (in `.RData` format) and will be available to you inmediately after you load your R package. Once again, as an example, I can take a look at the `meerkats` data without having to load anything because it is saved in the `data` folder. 
+
+```{r}
+head(meerkats)
+```
+
+#### **sandbox**
+
+And finally, the `sandbox` is where you will save all those scripts in which you are trying out stuff. This is a personal recommendation of mine; a folder where you can save all your playing around with models and data. 
+
+### Where did you find all this? 
+
+Everything I have explained is extracted from the book "**R packages**" by the most awesome **Hadley Wickham**, the head developer for Rstudio and co-author of packages as awesome as `tidyverse`, `ggplot2`, `pkgdown` etc. The book is absolutely free and you can find it here: https://r-pkgs.org/ and it has many more awesome things I did not develop here! Feel free to check it out! 
+
+<br>
+<center> 
+![](images/rpak_wickham.jpg)
+<figcaption>
+The main man Hadley Wickham himself. I want to be like him when I grow up. 
+</figcaption>
+</center>
+<br> 
 
 
-### **Integrate your R package with Git & GitHub**
 
-### **Hadley Wickham = God**
