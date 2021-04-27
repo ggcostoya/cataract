@@ -49,7 +49,9 @@
 <li>
   <a href="../articles/r_packages.html">R packages</a>
 </li>
-<li class="dropdown-header">What is GitHub?</li>
+<li>
+  <a href="../articles/github.html">What is GitHub?</a>
+</li>
 <li class="dropdown-header">GitHub Pages</li>
 <li>
   <a href="../reference/index.html">Functions</a>
@@ -81,7 +83,8 @@
     
 <div id="aim-of-the-game" class="section level3">
 <h3 class="hasAnchor">
-<a href="#aim-of-the-game" class="anchor"></a>Aim of the Game</h3>
+<a href="#aim-of-the-game" class="anchor"></a><strong>Aim of the Game</strong>
+</h3>
 <p>Have you ever been in that situation where your R script is longer than the Wall of China? Something like:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># first remove everything on the environment</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())</a>
@@ -116,37 +119,15 @@
 </div>
 <div id="what-is-an-r-package" class="section level3">
 <h3 class="hasAnchor">
-<a href="#what-is-an-r-package" class="anchor"></a>What is an R package?</h3>
-<p>An <strong>R package</strong> is a type of <strong>R project</strong>, in other words, a folder you set up and in which you can do all your project work. An R package works exactly like those packages you install and load every time you load a script (i.e <code>ggplot2</code>, <code>nlmer</code> etc.) when you need a function that does something useful. However, this time, you will be the person behind the scenes! A package can include, <strong>functions</strong>, <strong>data</strong>, and all kinds of <strong>scripts</strong> to process or document your work. As an example, I have developed the package <code>cataract</code>. I can load this package and with it I can specify other packages that need to be both installed and loaded with it:</p>
+<a href="#what-is-an-r-package" class="anchor"></a><strong>What is an R package?</strong>
+</h3>
+<p>An <strong>R package</strong> is a type of <strong>R project</strong>, in other words, a folder you set up and in which you can do all your project work. An R package works exactly like those packages you install and load every time you load a script (i.e <code>ggplot2</code>, <code>nlmer</code> etc.) when you need a function that does something useful. However, this time, you will be the person behind the scenes! A package can include, <strong>functions</strong>, <strong>data</strong>, and all kinds of <strong>scripts</strong> to process or document your work. As an example, I have developed the package <code>cataract</code>. I can load this package and with it I can specify other packages that need to be both installed and loaded with it.</p>
+<p>When loading the package I can also access functions that I have written specifically to perform certain tasks without having to load anything. For example, here is a function that generates facts about Chris with at 1-5 levels of spicyness:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/load_all.html">load_all</a></span><span class="op">(</span>quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
-<pre><code>## Error in get(genname, envir = envir) : object 'testthat_print' not found</code></pre>
-<pre><code>## Loading required package: tidyverse</code></pre>
-<pre><code>## -- Attaching packages ------------------------------------------------------------------ tidyverse 1.3.0 --</code></pre>
-<pre><code>## v ggplot2 3.3.0     v purrr   0.3.4
-## v tibble  2.1.3     v dplyr   0.8.3
-## v tidyr   1.0.0     v stringr 1.4.0
-## v readr   1.3.1     v forcats 0.5.0</code></pre>
-<pre><code>## -- Conflicts --------------------------------------------------------------------- tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre><code>## Loading required package: devtools</code></pre>
-<pre><code>## Loading required package: usethis</code></pre>
-<pre><code>## Loading required package: DescTools</code></pre>
-<pre><code>## Loading required package: gridExtra</code></pre>
-<pre><code>## 
-## Attaching package: 'gridExtra'</code></pre>
-<pre><code>## The following object is masked from 'package:dplyr':
-## 
-##     combine</code></pre>
-<pre><code>## Loading required package: here</code></pre>
-<pre><code>## here() starts at D:/projects/cataract</code></pre>
-<p>When loading the package I can access functions that I have written specifically to perform certain tasks without having to load anything. For example, here is a function that generates facts about Chris with at 1-5 levels of spicyness:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/generate_chris_fact.html">generate_chris_fact</a></span><span class="op">(</span>spicyness <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] "Chris has an awesome mustache"</code></pre>
 <p>And, at the same time, I can access any datasets I am working with. I can save them after being processed and with the variables I want so when I load them they are ready to be played with. As an example, I have added some meerkat data from a previous project to the <code>cataract</code> project. Here is the head of it:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">meerkats</span><span class="op">)</span></code></pre></div>
 <pre><code>##   obs_feeds obs_hours r_2_brood  group_id brood_id delta_mass
 ## 1         0      11.1      0.25 bfb_c_sfi  bfb0802      -0.03
@@ -159,7 +140,8 @@
 </div>
 <div id="creating-your-own-r-package" class="section level3">
 <h3 class="hasAnchor">
-<a href="#creating-your-own-r-package" class="anchor"></a>Creating your own R package</h3>
+<a href="#creating-your-own-r-package" class="anchor"></a><strong>Creating your own R package</strong>
+</h3>
 <p><em>Okay dude but how in the hell do you actually do this?</em> No problem! Here is a step by step tutorial for you:</p>
 <div id="step-1" class="section level5">
 <h5 class="hasAnchor">
@@ -220,7 +202,8 @@
 </div>
 <div id="elements-of-your-r-package" class="section level3">
 <h3 class="hasAnchor">
-<a href="#elements-of-your-r-package" class="anchor"></a>Elements of your R package</h3>
+<a href="#elements-of-your-r-package" class="anchor"></a><strong>Elements of your R package</strong>
+</h3>
 <p>As soon as you create your R package you will see that a bunch of folders automatically appear on the folder for it. You can see these in the lower right-hand panel in Rstudio where it says <code>Files</code>, it should look something like this:</p>
 <br><center>
 <img src="images/rpak_files.png" width="600">
@@ -238,39 +221,39 @@
 <a href="#description" class="anchor"></a><strong>DESCRIPTION</strong>
 </h4>
 <p>The <code>DESCRIPTION</code> file contains all the information related to your project. If you open it, it should look like this:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">Package<span class="op">:</span><span class="st"> </span>kurama <span class="co"># here's my example, but here the name of your package will appear. </span></a>
-<a class="sourceLine" id="cb20-2" title="2">Type<span class="op">:</span><span class="st"> </span>Package</a>
-<a class="sourceLine" id="cb20-3" title="3">Title<span class="op">:</span><span class="st"> </span>What the Package <span class="kw">Does</span> (Title Case)</a>
-<a class="sourceLine" id="cb20-4" title="4">Version<span class="op">:</span><span class="st"> </span><span class="dv">0</span>.<span class="fl">1.0</span></a>
-<a class="sourceLine" id="cb20-5" title="5">Author<span class="op">:</span><span class="st"> </span>Who wrote it</a>
-<a class="sourceLine" id="cb20-6" title="6">Maintainer<span class="op">:</span><span class="st"> </span>The package maintainer <span class="op">&lt;</span>yourself<span class="op">@</span>somewhere.net<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb20-7" title="7">Description<span class="op">:</span><span class="st"> </span>More about what it <span class="kw">does</span> (maybe more than one line)</a>
-<a class="sourceLine" id="cb20-8" title="8">    Use four spaces when indenting paragraphs within the Description.</a>
-<a class="sourceLine" id="cb20-9" title="9">License<span class="op">:</span><span class="st"> </span>What license is it under?</a>
-<a class="sourceLine" id="cb20-10" title="10">Encoding<span class="op">:</span><span class="st"> </span>UTF<span class="dv">-8</span></a>
-<a class="sourceLine" id="cb20-11" title="11">LazyData<span class="op">:</span><span class="st"> </span>true</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">Package<span class="op">:</span><span class="st"> </span>kurama <span class="co"># here's my example, but here the name of your package will appear. </span></a>
+<a class="sourceLine" id="cb6-2" title="2">Type<span class="op">:</span><span class="st"> </span>Package</a>
+<a class="sourceLine" id="cb6-3" title="3">Title<span class="op">:</span><span class="st"> </span>What the Package <span class="kw">Does</span> (Title Case)</a>
+<a class="sourceLine" id="cb6-4" title="4">Version<span class="op">:</span><span class="st"> </span><span class="dv">0</span>.<span class="fl">1.0</span></a>
+<a class="sourceLine" id="cb6-5" title="5">Author<span class="op">:</span><span class="st"> </span>Who wrote it</a>
+<a class="sourceLine" id="cb6-6" title="6">Maintainer<span class="op">:</span><span class="st"> </span>The package maintainer <span class="op">&lt;</span>yourself<span class="op">@</span>somewhere.net<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-7" title="7">Description<span class="op">:</span><span class="st"> </span>More about what it <span class="kw">does</span> (maybe more than one line)</a>
+<a class="sourceLine" id="cb6-8" title="8">    Use four spaces when indenting paragraphs within the Description.</a>
+<a class="sourceLine" id="cb6-9" title="9">License<span class="op">:</span><span class="st"> </span>What license is it under?</a>
+<a class="sourceLine" id="cb6-10" title="10">Encoding<span class="op">:</span><span class="st"> </span>UTF<span class="dv">-8</span></a>
+<a class="sourceLine" id="cb6-11" title="11">LazyData<span class="op">:</span><span class="st"> </span>true</a></code></pre></div>
 <p>The <code>DESCRIPTION</code> file can include all <strong>Dependencies</strong>, which are all packages that need to be installed and loaded for your package to run. You will need to add them manually so your <code>DESCRIPTION</code> file looks like:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1">Package<span class="op">:</span><span class="st"> </span>kurama <span class="co"># here's my example, but here the name of your package will appear. </span></a>
-<a class="sourceLine" id="cb21-2" title="2">Type<span class="op">:</span><span class="st"> </span>Package</a>
-<a class="sourceLine" id="cb21-3" title="3">Title<span class="op">:</span><span class="st"> </span>What the Package <span class="kw">Does</span> (Title Case)</a>
-<a class="sourceLine" id="cb21-4" title="4">Version<span class="op">:</span><span class="st"> </span><span class="dv">0</span>.<span class="fl">1.0</span></a>
-<a class="sourceLine" id="cb21-5" title="5">Author<span class="op">:</span><span class="st"> </span>Who wrote it</a>
-<a class="sourceLine" id="cb21-6" title="6">Maintainer<span class="op">:</span><span class="st"> </span>The package maintainer <span class="op">&lt;</span>yourself<span class="op">@</span>somewhere.net<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb21-7" title="7">Description<span class="op">:</span><span class="st"> </span>More about what it <span class="kw">does</span> (maybe more than one line)</a>
-<a class="sourceLine" id="cb21-8" title="8">    Use four spaces when indenting paragraphs within the Description.</a>
-<a class="sourceLine" id="cb21-9" title="9">License<span class="op">:</span><span class="st"> </span>What license is it under?</a>
-<a class="sourceLine" id="cb21-10" title="10">Encoding<span class="op">:</span><span class="st"> </span>UTF<span class="dv">-8</span></a>
-<a class="sourceLine" id="cb21-11" title="11">LazyData<span class="op">:</span><span class="st"> </span>true</a>
-<a class="sourceLine" id="cb21-12" title="12">Dependencies<span class="op">:</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb21-13" title="13"><span class="st">    </span><span class="kw">R</span>(<span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span>.<span class="fl">3.0</span>), <span class="co"># specify the version of R needed to run your package</span></a>
-<a class="sourceLine" id="cb21-14" title="14">    tidyverse, <span class="co"># packages that need to be installed and loaded for your project to run </span></a>
-<a class="sourceLine" id="cb21-15" title="15">    devtools,</a>
-<a class="sourceLine" id="cb21-16" title="16">    DescTools, </a>
-<a class="sourceLine" id="cb21-17" title="17">    gridExtra,</a>
-<a class="sourceLine" id="cb21-18" title="18">    here</a>
-<a class="sourceLine" id="cb21-19" title="19">RoxygenNote<span class="op">:</span><span class="st"> </span><span class="dv">7</span>.<span class="fl">1.1</span> <span class="co"># do me a favor and include this too, I'll get back to it later ;) </span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">Package<span class="op">:</span><span class="st"> </span>kurama <span class="co"># here's my example, but here the name of your package will appear. </span></a>
+<a class="sourceLine" id="cb7-2" title="2">Type<span class="op">:</span><span class="st"> </span>Package</a>
+<a class="sourceLine" id="cb7-3" title="3">Title<span class="op">:</span><span class="st"> </span>What the Package <span class="kw">Does</span> (Title Case)</a>
+<a class="sourceLine" id="cb7-4" title="4">Version<span class="op">:</span><span class="st"> </span><span class="dv">0</span>.<span class="fl">1.0</span></a>
+<a class="sourceLine" id="cb7-5" title="5">Author<span class="op">:</span><span class="st"> </span>Who wrote it</a>
+<a class="sourceLine" id="cb7-6" title="6">Maintainer<span class="op">:</span><span class="st"> </span>The package maintainer <span class="op">&lt;</span>yourself<span class="op">@</span>somewhere.net<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb7-7" title="7">Description<span class="op">:</span><span class="st"> </span>More about what it <span class="kw">does</span> (maybe more than one line)</a>
+<a class="sourceLine" id="cb7-8" title="8">    Use four spaces when indenting paragraphs within the Description.</a>
+<a class="sourceLine" id="cb7-9" title="9">License<span class="op">:</span><span class="st"> </span>What license is it under?</a>
+<a class="sourceLine" id="cb7-10" title="10">Encoding<span class="op">:</span><span class="st"> </span>UTF<span class="dv">-8</span></a>
+<a class="sourceLine" id="cb7-11" title="11">LazyData<span class="op">:</span><span class="st"> </span>true</a>
+<a class="sourceLine" id="cb7-12" title="12">Dependencies<span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="st">    </span><span class="kw">R</span>(<span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span>.<span class="fl">3.0</span>), <span class="co"># specify the version of R needed to run your package</span></a>
+<a class="sourceLine" id="cb7-14" title="14">    tidyverse, <span class="co"># packages that need to be installed and loaded for your project to run </span></a>
+<a class="sourceLine" id="cb7-15" title="15">    devtools,</a>
+<a class="sourceLine" id="cb7-16" title="16">    DescTools, </a>
+<a class="sourceLine" id="cb7-17" title="17">    gridExtra,</a>
+<a class="sourceLine" id="cb7-18" title="18">    here</a>
+<a class="sourceLine" id="cb7-19" title="19">RoxygenNote<span class="op">:</span><span class="st"> </span><span class="dv">7</span>.<span class="fl">1.1</span> <span class="co"># do me a favor and include this too, I'll get back to it later ;) </span></a></code></pre></div>
 <p>Setting up a <code>DESCRIPTION</code> file like this saves you the trouble of having to install and load packages everytime. You just need to include them as <em>Dependencies</em> and BOOM! They will be loaded every time you load your project, which btw you can do using this command:</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/load_all.html">load_all</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="r" class="section level4">
@@ -278,7 +261,7 @@
 <a href="#r" class="anchor"></a><strong>R</strong>
 </h4>
 <p>The <code>R</code> folder will contain all the functions for your package. If you click there you’ll see that R has automatically created a function called <code>hello</code>, which is saved on the <code>hello.R</code> file that looks like this:</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Hello, world!</span>
 <span class="co">#</span>
 <span class="co"># This is an example function named 'hello' </span>
@@ -298,7 +281,7 @@
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Hello, world!"</span><span class="op">)</span>
 <span class="op">}</span></code></pre></div>
 <p>The goal here is that you create functions for yourself to make some of the tasks within your package easier and more repeatable. Writing your own functions is a way to avoid repetitions within your code. For example, let’s say that for the <code>meerkats</code> dataset I showed you earlier I want to determine the mean number of feeding observations (<code>obs_feeds</code>) for a given brood.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># let's check the data first once again: </span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">meerkats</span><span class="op">)</span></code></pre></div>
 <pre><code>##   obs_feeds obs_hours r_2_brood  group_id brood_id delta_mass
@@ -308,7 +291,7 @@
 ## 4         3      12.6      0.25 bfb_c_sfi  bfb0802       0.31
 ## 5        16      12.2      0.25 bfb_c_sfi  bfb0802       0.17
 ## 6        12      11.5      0.25 bfb_c_sfi  bfb0802       0.14</code></pre>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># let's say that I want to determine the mean obs_feeds for the "bfb0802" brood</span>
 
 <span class="co"># first I filter the data to get only the "bfb0802" brood</span>
@@ -317,8 +300,9 @@
 <span class="co"># then get the mean for that brood</span>
 <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">brood_I_want</span><span class="op">$</span><span class="va">obs_feeds</span>, na.rm <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 8.111111</code></pre>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># if I needed to extract the mean for all broods that could be a very tedious process, so I can write a function to automate this process. I can call this function "extract_mean_feeds": </span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># if I needed to extract the mean for all broods that could be a very tedious process, </span>
+<span class="co"># so I can write a function to automate this process. I can call this function "extract_mean_feeds": </span>
 
 <span class="va">get_mean_feeds</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">brood_id_I_want</span><span class="op">)</span><span class="op">{</span> <span class="co"># start the function. it takes one argument: brood id</span>
   
@@ -336,8 +320,10 @@
 <span class="co"># let's test the function out </span>
 <span class="fu"><a href="../reference/get_mean_feeds.html">get_mean_feeds</a></span><span class="op">(</span>brood_id_I_want <span class="op">=</span> <span class="st">"bfb0802"</span><span class="op">)</span></code></pre></div>
 <pre><code>## [1] 8.111111</code></pre>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># AWESOME! It worked! And now with a bit of R magic we can do in one line what would have taken around 40 and get the mean obs_feeds for all broods! </span>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># AWESOME! It worked! And now with a bit of R magic we can do in one line what </span>
+<span class="co"># would have taken around 40 and get the mean obs_feeds for all broods! </span>
+
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>obs_feeds <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/levels.html">levels</a></span><span class="op">(</span><span class="va">meerkats</span><span class="op">$</span><span class="va">brood_id</span><span class="op">)</span><span class="op">)</span>, <span class="va">get_mean_feeds</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>##          obs_feeds
 ## bfb0802   8.111111
@@ -360,7 +346,7 @@
 <a href="#raw_data" class="anchor"></a><strong>raw_data</strong>
 </h4>
 <p>In the <code>raw_data</code> folder you will save all data that comes fresh from the field or the lab. I am talking about those messy excels, .txt files, .csv files anything! All in there. The raw data folder will also contain what I call <strong>cleaning scripts</strong>. These will have all the data processing, filtering and cleaning necessary for your raw data to become the actual data you’ll use in your scripts. If you go to: <a href="https://github.com/ggcostoya/cataract/tree/master/raw_data" class="uri">https://github.com/ggcostoya/cataract/tree/master/raw_data</a>, you’ll be able to see the raw <code>meerkats</code> data I’ve been using for this project and how using this script:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## Meerkat data preparation</span>
 
 <span class="co"># load here package</span>
@@ -386,7 +372,7 @@
 <a href="#data" class="anchor"></a><strong>data</strong>
 </h4>
 <p>The <code>data</code> folder will contain the actual data you will use in your scripts (in <code>.RData</code> format) and will be available to you inmediately after you load your R package. Once again, as an example, I can take a look at the <code>meerkats</code> data without having to load anything because it is saved in the <code>data</code> folder.</p>
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">meerkats</span><span class="op">)</span></code></pre></div>
 <pre><code>##   obs_feeds obs_hours r_2_brood  group_id brood_id delta_mass
 ## 1         0      11.1      0.25 bfb_c_sfi  bfb0802      -0.03
@@ -405,8 +391,9 @@
 </div>
 <div id="where-did-you-find-all-this" class="section level3">
 <h3 class="hasAnchor">
-<a href="#where-did-you-find-all-this" class="anchor"></a>Where did you find all this?</h3>
-<p>Everything I have explained is extracted from the book “<strong>R packages</strong>” by the most awesome <strong>Hadley Wickham</strong>, the head developer for Rstudio and co-author of packages as awesome as <code>tidyverse</code>, <code>ggplot2</code>, <code>pkgdown</code> etc. The book is absolutely free and you can find it here: <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a></p>
+<a href="#where-did-you-find-all-this" class="anchor"></a><strong>Where did you find all this?</strong>
+</h3>
+<p>Everything I have explained is extracted from the book “<strong>R packages</strong>” by the most awesome <strong>Hadley Wickham</strong>, the head developer for Rstudio and co-author of packages as awesome as <code>tidyverse</code>, <code>ggplot2</code>, <code>pkgdown</code> etc. The book is absolutely free and you can find it here: <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a> and it has many more awesome things I did not develop here! Feel free to check it out!</p>
 <br><center>
 <img src="images/rpak_wickham.jpg"><figcaption>
 The main man Hadley Wickham himself. I want to be like him when I grow up.
