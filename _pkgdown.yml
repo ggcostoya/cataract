@@ -17,7 +17,7 @@ navbar:
   - text: R packages
     href: articles/r_packages.html
   - text: What is GitHub?
-    href:
+    href: articles/github.html
   - text: GitHub Pages
     href:
   - text: Functions
