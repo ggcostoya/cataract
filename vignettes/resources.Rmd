@@ -1,0 +1,56 @@
+---
+title: "Resources"
+output: 
+  html_document:
+    theme: spacelab
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+---
+```{r setup, include=FALSE}
+devtools::load_all()
+```
+
+Hi there! Here's a list of all resources I have used throughout this repository's GitHub page as well as during the EcoLunch Presentation
+
+#### **What is Git?** 
+
+* **Installing `GIT`**: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+* **More information about `GIT`**: https://git-scm.com/about/branching-and-merging
+
+* **_Advanced `R`_**, by **Hadley Wickham**: https://adv-r.hadley.nz/index.html
+
+* **Tutorial on `R` functions** within **_Advanced `R`_**: https://adv-r.hadley.nz/functions.html
+
+#### **Working with `R` packages**
+
+* **_`R` packages_** by **Hadley Wickham**: https://r-pkgs.org/ 
+
+* **Advice on naming `R` packages** within **_`R` packages_**: https://r-pkgs.org/workflows101.html?q=namin#naming
+
+#### **What is GitHub?**
+
+* **GitHub**: https://github.com
+
+* **God, I mean, Hadley Wickham's GitHub profile**: https://github.com/hadley
+
+* **Richard McElreath's paper supplementary materials on GitHub**: https://github.com/rmcelreath/mcelreath-koster-human-nature-2014
+
+* **Generate an SSH key**: https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+* **Check if you already have an SSH key**: https://docs.github.com/en/github/authenticating-to-github/checking-for-existing-ssh-keys
+
+* **Connect your device and GitHub through an SSH key**: https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+
+#### **Look kewl with GitHub pages**
+
+* **_`R` markdown_: The Definitive Guide** by **Yihui Xie, J. J. Allaire & Garrett Grolemund** : https://bookdown.org/yihui/rmarkdown/
+
+* **Example of an awesom GitHub page by Matthieu Bruneux**: https://matthieu-bruneaux.gitlab.io/isotracer/ 
+
+* **BITCONNECT video**: https://www.youtube.com/watch?v=yIL9wLxG01M
+
+#### **Other stuff**
+
+* **_`R` for Data Science_** by **Hadley Wickham**: https://r4ds.had.co.nz/index.html

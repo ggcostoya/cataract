@@ -1,33 +1,43 @@
 # Project **Cataract**
-**A basic guide on how to use Git, R packages, GitHub and GitHub pages to tidy keep your progess tracked and tidy as well as make your results look kewl.**
+**Some basics on reproducible science using Git, R packages, GitHub & GitHub pages: How to tidy, keep track of and make your research look kewl**
 
-## Contents 
+### **Information** 
 
-This GitHub repository contains all extra resources complementary to the EcoLunch talk on April 30th 2021, an initiative of the EECB program at the
-University of Nevada, Reno. Below is a guide of the contents of this repository: 
+This GitHub repository contains all extra resources complementary to the EcoLunch talk on April 30th 2021, an initiative of the EECB program at the University of Nevada, Reno. 
 
-- **What is Git?**: A conceptual explanation on what version control with Git is and instructions on how to install Git on you computer. 
-- **R packages**: A quick guide on how to work using R packages and why are they useful for your research workflow. 
-- **What is GitHub?**:
-- **GitHub Pages**:
-- **Manual**:
-- **Resources**:
-- **Functions**:
+**Talk title** : Project Cataract: Some basics on reproducible science using Git, R packages, GitHub & GitHub pages.
 
+**Author**: Guillermo Garcia Costoya, PhD. Student, Logan Lab. 
 
+**Talk slides**: 
 
-If you are checking this out on GitHub go to ggcostoya.github.io/cataract/index to visit all
+### **Contents**
 
-## Why *Cataract*? 
+Below is a guide of the contents within this page (Numbers indicate the recommeded reading order): 
 
-This all falls down on the developer of this repository (@ggcostoya) being the geekiest Marvel fan there is. [**SPOILER WARNING**] Within Disney+'s *Wandavison*, Project **Cataract**  is the initiative to bring the Avenger **Vision** back to life. If you remember from *Avengers: Infinity War*, Vision carries in his forehead the *Mind stone*, one of the six infinity stones that Thanos so desperately wants. As a matter of fact, Vision's stone is the last one Thanos needs in order to have the power to eliminate half of all living creatures. That is why when Thanos finds him during the battle of Wakanda, to put it in the nicest possible way, he rubbs his forhead really hard and he ends up getting the stone, leaving Vision's head a little bit lighter in the process. However, Vision's body (minus stone and 75% of the head) is recovered, and during the events of "Wandavision" a bit of Scarlet Witch's magic is used to bring it back to life, now without memories from his past life and looking white and creepy. The new **White Vision** is sent to the town of **Westview** to kill both the Scarlett Witch and the version of Vision she created in her grief. Before White Vision is able to complete his mission, **Wanda's Vision** is able to convince him not to do it by unlocking his memories from before Thanos. 
+* (1) **What is Git?**: A conceptual explanation on what version control with `GIT` is and instructions on how to install `GIT` on you computer. 
 
+* (2) **R packages**: A quick guide on how to work using `R` packages and why are they useful for your research workflow, instructions on how to create your own `R` packages and a guide of the elements of an `R` package.
+
+* (3) **What is GitHub?**: Some notes on what GitHub is togther with instructions on how to set your own GitHub account and connect it to your `R` package. 
+
+* (4) **GitHub Pages**: Information about what GitHub pages are, `R` markdown and how to set up a website for your own `R` package. 
+
+* (5) **Resources**: A list of links with the resources used for this talk. 
+
+* (6) **Functions**: Details on the functions that are part of the `cataract` package associated with this GitHub repository. 
+
+### **Why _Cataract_?** 
+
+This all falls down on the developer of this repository (@ggcostoya) being the geekiest Marvel fan there is. Within Disney+'s *Wandavison*, Project **Cataract**  is the initiative to bring the Avenger **Vision** back to life. One of the recommendations I give in this repository is to name your projects with a single word that is both informative of what is going and funny or interesting enough to motivate you to work on it. I think that `catract` is awesome so that's the name I chose OKAY? Don't judge me daaamn. 
+
+<br>
 <p align="center">
-  <img src="https://internewscast.com/wp-content/uploads/2021/03/wandavision-what-exactly-happened-to-the-white-vision.jpg" />
+  <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/01/WandaVision-Paul-Bettany-Vision.jpg" width="700">
   <br>
-  <em> Wanda's version of Vision unlocking White Vision's memories </em>
+  <em> The Avenger Vision having an barbaque on a Sunday morning while tauting the meet with a classic yet effective "Come at me bro".</em>
 </p>
 
-My goal with this talk and this  is to be that bit magi
+
 
 

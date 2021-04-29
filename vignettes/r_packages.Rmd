@@ -1,5 +1,5 @@
 ---
-title: "Working with R packages"
+title: "Working with `R` packages"
 output: 
   html_document:
     theme: spacelab
@@ -14,7 +14,7 @@ devtools::load_all()
 
 ### **Aim of the Game**
 
-Have you ever been in that situation where your R script is longer than the Wall of China? Something like: 
+Have you ever been in that situation where your R script is painfully long? Something like: 
 
 ```{r, eval = FALSE}
 # first remove everything on the environment
@@ -48,33 +48,44 @@ model <- lm(horn_length ~ weight, actual_data)
 # to then get a fricking ERROR AGAIN GODDAMN IT! 
 
 ```
+<br> 
 
+Installing packages, loading them, cleaning data, preparing it for analysis, doing the analysis and plotting the results all within the same file can result in absurdly long `R` scripts. There is a way to solve this and it is by treating your entire research project as an **`R` package**. Let me explain: 
 
-That is waaay too long and sooo frustrating! But worry no more! There is a way to solve this and it is treating your entire project as an **R package**. Let me explain
+### **What is an `R` package?**
 
-### **What is an R package?**
+An **`R` package** is a type of **`R` project**, in other words, a way to work with `R` on a specific topic. A package, just like any project, is set up from a folder in your computer that you set up where you store all your files and data. If you develop your own `R` package it will work similarly to those packages you install and load every time you run an `R` script (i.e `ggplot2`, `nlmer` etc.) when you need a function that does something useful, only this time, you will be the person behind the scenes! 
 
-An **R package** is a type of **R project**, in other words, a folder you set up and in which you can do all your project work. An R package works exactly like those packages you install and load every time you load a script (i.e `ggplot2`, `nlmer` etc.) when you need a function that does something useful. However, this time, you will be the person behind the scenes! A package can include, **functions**, **data**, and all kinds of **scripts** to process or document your work. As an example, I have developed the package `cataract`. I can load this package and with it I can specify other packages that need to be both installed and loaded with it. 
+A package can include, **functions**, **data**, and all kinds of scripts to process or document your work. As an example, I have developed the package `cataract` por the EcoLunch presentation. I can load this package and with it I can specify other packages that need to be both installed and loaded with it with the function
 
-When loading the package I can also access functions that I have written specifically to perform certain tasks without having to load anything. For example, here is a function that generates facts about Chris with at 1-5 levels of spicyness:
+```{r, eval = FALSE}
+devtools::load_all()
+```
+<br> 
+
+When loading the package I can also access functions that I have written myself to perform specific tasks. For example, here is a function that generates facts about **Chris H.** with different degrees (1-5) of spicyness:
 
 ```{r}
 generate_chris_fact(spicyness = 3)
 ```
-
-And, at the same time, I can access any datasets I am working with. I can save them after being processed and with the variables I want so when I load them they are ready to be played with. As an example, I have added some meerkat data from a previous project to the `cataract` project. Here is the head of it: 
+<br>
+I can also access any data sets I am working with. I can actually save them after being processed and with the variables I want so when I load them they are ready to be played with. As an example, I have added some **avengers** data  to the `cataract` project: 
 
 ```{r}
-head(meerkats)
+# just typing the dataset's name when the package is loaded will make the data pop up!
+avengers
 ```
 
-And this is just the tip of the iceberg! 
+<br>
 
-### **Creating your own R package**
+And this is just the tip of the iceberg of the things you can do with your `R` package! Would you be interested in creating one for yourself? Here are some tips: 
+
+### **Creating your own `R` package**
 
 *Okay dude but how in the hell do you actually do this?* No problem! Here is a step by step tutorial for you: 
 
 ##### **Step 1**
+
 Have you ever noticed when you open Rstudio that little **R** sign that says something like `Project:(None)`. Click there and go to `New Project`. 
 
 <center>
@@ -83,7 +94,8 @@ Have you ever noticed when you open Rstudio that little **R** sign that says som
 <br>
 
 ##### **Step 2**
-Then this window will pop up, we want a `New Directory`
+
+Then this window will pop up, we want a `New Directory`.
 
 <br>
 <center>
@@ -92,6 +104,7 @@ Then this window will pop up, we want a `New Directory`
 <br>
 
 ##### **Step 3**
+
 Here we will choose `R package`. 
 
 <br>
@@ -101,6 +114,7 @@ Here we will choose `R package`.
 <br>
 
 ##### **Step 4**
+
 Which will open this:
 
 <br>
@@ -111,17 +125,17 @@ Which will open this:
 
 Three things to consider here: 
 
-* 1. **Name of your package**: Package naming needs to meet certain formalities. In this link: https://r-pkgs.org/workflows101.html?q=namin#naming you will find them as well as some pragmatic advice on naming. My personal recommendation is to name your packages with a single word that is descriptive enough and that motivates you to work on it. What I do is name my packages using extremely geeky associations which are related with what the package is about in a funny way. 
+* 1. **Name of your package**: Package naming needs to meet certain formalities. In this link: https://r-pkgs.org/workflows101.html?q=namin#naming you will find them as well as some pragmatic advice on naming. My personal recommendation is to name your packages with a **single word** that is descriptive enough and that motivates you to work on it. What I do is name my packages using extremely geeky associations which are related with what the package is about in a funny way. 
 
-* 2. **Make sure you create the folder for the package on a directory you know!**: You can set it up on your Desktop, that's fine! But remember it is there!. What I recommend, as kind of a technological tidyness nerd is to create a specialized folder for `projects` where you can locate all your work!
+* 2. **Make sure you create the folder for the package on a directory you know!**: You can set it up on your Desktop, that's fine! But remember it is there!. What I recommend, as kind of a technological tidiness nerd is to create a specialized folder for `projects` where you can locate all your work!
 
-* 3. **Don't forget about GIT!** If you followed my presentation or have checked other pages before this one within *Project Catract* you should have **GIT** installed in your computer right now (if not go to the **What is Git?** page and check that out). If you indeed have it, a little check box with `Create git repository` should appear in this screen. Be sure to check that box! It will be essential later. 
+* 3. **Don't forget about `GIT`!** You should have **GIT** installed in your computer right now (if not go to: https://ggcostoya.github.io/cataract/articles/git.html and check how to do it). If you indeed have it, a little check box with `Create git repository` should appear in this screen. Be sure to check that box! It will be essential later. 
 
-Once you are done, click on `Create Project` and KABOOM! Congrats! You've created your first R package, now it's time to see what is going on here. 
+Once you are done, click on `Create Project` and **KABOOM!** Congrats! You've created your first `R` package, now it's time to see what is going on here. 
 
-### **Elements of your R package**
+### **Elements of your `R` package**
 
-As soon as you create your R package you will see that a bunch of folders automatically appear on the folder for it. You can see these in the lower right-hand panel in Rstudio where it says `Files`, it should look something like this: 
+As soon as you create your `R` package you will see that a bunch of folders automatically appear on the folder for it. You can see these in the lower right-hand panel in Rstudio where it says `Files`, it should look something like this: 
 
 <br>
 <center>
@@ -131,11 +145,11 @@ As soon as you create your R package you will see that a bunch of folders automa
 
 Among these files and documents the ones you got to pay attention to are: 
 
-#### **.Rproj**
+#### **`.Rproj`**
 
-The `.Rproj` file is the source to all of your R packge. In this case, as an example, I've created the `kurama` package so in the picture above you see `kurama.Rproj`. When you create projects of your own the `.Rproj` file will be your package's name. If you go to the folder where you created the package and click on it an R session with your package name will appear. Notice also that on the top right hand side it doesn't say `Project:(None)` anymore! The name of your package should appear up there. 
+The `.Rproj` file is the source to all of your `R` package. In this case, as an example, I've created the `kurama` package so in the picture above you see `kurama.Rproj`. When you create projects of your own the `.Rproj` file will be your package's name. If you go to the folder where you created the package and click on it an `R` session with your package name will appear. Notice also that on the top right hand side it doesn't say `Project:(None)` anymore! The name of your package should appear up there. 
 
-#### **DESCRIPTION**
+#### **`DESCRIPTION`**
 
 The `DESCRIPTION` file contains all the information related to your project. If you open it, it should look like this: 
 
@@ -153,39 +167,38 @@ Encoding: UTF-8
 LazyData: true
 ```
 
-The `DESCRIPTION` file can include all **Dependencies**, which are all packages that need to be installed and loaded for your package to run. You will need to add them manually so your `DESCRIPTION` file looks like: 
+The `DESCRIPTION` file can include all **Dependencies**, which are all packages that need to be installed and loaded for your package to run. You will need to add them manually. You can also add information about the package (title, author, description etc.). As an example, here is the `DESCRIPTION` file for `cataract`: 
 
 ```{r, eval = FALSE}
-Package: kurama # here's my example, but here the name of your package will appear. 
+Package: cataract
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Title: Project Cataract
+Version: 1.0
+Author: Guillermo Garcia Costoya
+Maintainer: Guillermo Garcia Costoya <guille@nevada.unr.edu>
+Description: A quick guide on how to use GIT, R packages, GitHub and GitHub pages
+    as part of your research process to keep your files and data tidy, tracked, organized
+    and kewl. A package develop to complement the April 30th 2021 EcoLunch talk by 
+    Guillermo Garcia Costoya at the EECB program of the University of Nevada, Reno
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Dependencies: 
-    R(>= 3.3.0), # specify the version of R needed to run your package
-    tidyverse, # packages that need to be installed and loaded for your project to run 
+Depends:  ## Here you will need to specify the packages you want to be installed and loaded!
+    R(>= 3.3.0),
+    tidyverse,
     devtools,
     DescTools, 
     gridExtra,
     here
-RoxygenNote: 7.1.1 # do me a favor and include this too, I'll get back to it later ;) 
+RoxygenNote: 7.1.1 ## Do me a favor and add this as well if you are copy pasting. It's for your own good. 
+
 ```
 
-Setting up a `DESCRIPTION` file like this saves you the trouble of having to install and load packages everytime. You just need to include them as *Dependencies* and BOOM! They will be loaded every time you load your project, which btw you can do using this command: 
+Setting up a `DESCRIPTION` file like this saves you the trouble of having to install and load packages every time. You just need to include them as *Dependencies* and **BOOM!** They will be loaded every time you load your `R` package!
 
-```{r, eval=FALSE}
-devtools::load_all()
-```
+#### **`\R`**
 
-#### **R**
-
-The `R` folder will contain all the functions for your package. If you click there you'll see that R has automatically created a function called `hello`, which is saved on the `hello.R` file that looks like this: 
+The `\R` folder will contain all the functions for your package. If you click there as soon as you create your package you'll see that `R` has automatically created a function called `hello`, which is saved on the `hello.R` file that looks like this: 
 
 ```{r, eval = FALSE}
 # Hello, world!
@@ -207,74 +220,64 @@ hello <- function() {
   print("Hello, world!")
 }
 ```
-
-The goal here is that you create functions for yourself to make some of the tasks within your package easier and more repeatable. Writing your own functions is a way to avoid repetitions within your code. For example, let's say that for the `meerkats` dataset I showed you earlier I want to determine the mean number of feeding observations (`obs_feeds`) for a given brood. 
+<br>
+The goal here is that you create functions for yourself to make tasks easier and more repeatable. Writing your own functions is a way to avoid repetitions and keep your code short. For example, let's say that for the `avengers` data set I showed you earlier I want to determine who would win in a fight between **Vision** and **Thor**:
 
 ```{r}
 # let's check the data first once again: 
-head(meerkats)
+avengers
 ```
 
 ```{r}
-# let's say that I want to determine the mean obs_feeds for the "bfb0802" brood
-
-# first I filter the data to get only the "bfb0802" brood
-brood_I_want <- filter(meerkats, brood_id == "bfb0802") # note: "filter" is a very useful function from the "tidyverse" package, included as a dependency for the `cataract` package so no need to load or install, I can just use it like this! ;) 
-
-# then get the mean for that brood
-mean(brood_I_want$obs_feeds, na.rm = T)
+# filter the data to keep only data for vision and thor 
+avg_vision_thor <- filter(avengers, name %in% c("vision", "thor"))
+# keep the avenger with the highest power value 
+winner <- filter(avg_vision_thor, power == max(power))
+# extract the name of the winner 
+name_winner <- as.character(winner$name)
+# and here's the winner! VISION! of course... 
+name_winner
 ```
 
 ```{r}
-# if I needed to extract the mean for all broods that could be a very tedious process, 
-# so I can write a function to automate this process. I can call this function "extract_mean_feeds": 
+# what if I needed to know who would win between scarlett witch and hulk? 
+# Redo the entire shannanigan again? HELL NO! 
+# I can write a function to automate this process. I can call this function "match_avengers": 
 
-get_mean_feeds <- function(brood_id_I_want){ # start the function. it takes one argument: brood id
-  
-  # first, it filters the meerkat data to the brood I need 
-  brood_I_want_data <- filter(meerkats, brood_id == brood_id_I_want)
-  
-  # get the mean obs_feeds for that brood 
-  mean_obs_feeds <- mean(brood_I_want_data$obs_feeds, na.rm = T)
-  
-  # return that mean as the output of the function
-  return(mean_obs_feeds)
-  
-  } # end the function
-
-# let's test the function out 
-get_mean_feeds(brood_id_I_want = "bfb0802")
+match_avengers <- function(avg_1, avg_2){
+  # avg_1 and avg_2 are the arguments of the function,
+  # filter avenger data and keep only two specified avengers as well as the most powerful one
+  match <- avengers %>% filter(name %in% c(avg_1, avg_2)) %>% filter(power == max(power))
+  # get the name of the winner
+  winner <- as.character(match$name)
+  return(winner)
+}
+# let's test the function out! SCARLETT WITCH ALL DAY!! 
+match_avengers("scarlett witch", "hulk")
 ```
+<br>
+If you check the `\R` folder for the `cataract` package here: https://github.com/ggcostoya/cataract/tree/master/R , you'll see that one of the files there is for the `match_avengers` function. If it is there I can use the function any time `cataract` is loaded! 
 
-```{r}
-# AWESOME! It worked! And now with a bit of R magic we can do in one line what 
-# would have taken around 40 and get the mean obs_feeds for all broods! 
+#### **`.gitignore`**
 
-head(data.frame(obs_feeds = sapply(as.vector(levels(meerkats$brood_id)), get_mean_feeds)))
-```
+The `.gitignore` file will specify which files or folders you don't want `GIT` tracking version-control style. For example, a good addition to `.gitignore` is the `.Rproj` file, it will never change, why keep track of it? 
 
-If you check the `R` folder for the `cataract` package here: https://github.com/ggcostoya/cataract/tree/master/R , you'll see that one of the files there is for the `extract_mean_feeds` function. If it is there I can use it any time `cataract` is loaded! 
+### **Elements you NEED TO ADD to your `R` package**
 
-#### **.gitignore**
+Although the package would work with the basic stuff that is generated when you created, to upgrade your `R` package to the next level you'll need to create the following folders: 
 
-The `.gitignore` file will specify which files or folders you don't want **GIT** to keep track of version-control style. For example, a good addition to `.gitignore` is the `.Rproj` file, it will never change, why keep track of it? 
+#### **`\raw_data`**
 
-These are the basic things you need to have, but to upgrade your R package to the next level you'll need to create the following folders: 
+In the `\raw_data` folder you will save all data that comes fresh from the field or the lab. I am talking about those messy excels, `.txt` files, `.csv` files anything! All in there. The `\raw_data` folder will also contain what I call **cleaning scripts**. These will have all the data processing, filtering and cleaning necessary for your raw data to become the actual data you'll use in your scripts. 
 
-#### **raw_data**
+If you go to: https://github.com/ggcostoya/cataract/tree/master/raw_data, you'll be to see the raw data for the `cataract`. As an example I have included some `meerkats` data a friend of mine used for a project a couple of years ago. Below is an an example **cleaning script** (called `meerkats_data_prep.R`):
 
-In the `raw_data` folder you will save all data that comes fresh from the field or the lab. I am talking about those messy excels, .txt files, .csv files anything! All in there. The raw data folder will also contain what I call **cleaning scripts**. These will have all the data processing, filtering and cleaning necessary for your raw data to become the actual data you'll use in your scripts. If you go to: https://github.com/ggcostoya/cataract/tree/master/raw_data, you'll be able to see the raw `meerkats` data I've been using for this project and how using this script: 
 
 ```{r, eval = FALSE}
 ## Meerkat data preparation
-
-# load here package
-library(here)
-
-# load the meerkat data
-meerkats <- read.table(file.path(here(), "raw_data", "meerkats.txt"))
-
-# rename some columns
+library(here) # load here package
+meerkats <- read.table(file.path(here(), "raw_data", "meerkats.txt")) # load the raw meerkat data
+# rename some columns to make analysis easier
 meerkats <- data.frame(obs_feeds = meerkats$observedNfeeds,
                        obs_hours = meerkats$observedhours,
                        r_2_brood = meerkats$relatedness2brood,
@@ -284,26 +287,27 @@ meerkats <- data.frame(obs_feeds = meerkats$observedNfeeds,
 
 # save meerkat data in "data" folder
 save(meerkats, file = file.path(here::here(), "data", "meerkats.RData"))
-
 ```
+<br> 
 
-I read it, rename variables and save it in the `data` folder. 
+As you see above, I am reading it, renaming some variables to make it look prettier and easier to handle when running stats on it and finally I am saving it in the `\data` folder, which I'll talk about next: 
 
-#### **data**
+#### **`\data`**
 
-The `data` folder will contain the actual data you will use in your scripts (in `.RData` format) and will be available to you inmediately after you load your R package. Once again, as an example, I can take a look at the `meerkats` data without having to load anything because it is saved in the `data` folder. 
+The `\data` folder will contain the actual data you will use in your scripts (in `.RData` format) and will be available to you immediately after you load your `R` package. As an example, I can take a look at the `meerkats` data without having to load anything because it is saved in the `data` folder! 
 
 ```{r}
 head(meerkats)
 ```
+<br>
 
-#### **sandbox**
+#### **`\sandbox`**
 
-And finally, the `sandbox` is where you will save all those scripts in which you are trying out stuff. This is a personal recommendation of mine; a folder where you can save all your playing around with models and data. 
+And finally, the `\sandbox` is where you will save all those scripts in which you are trying out stuff. This is a **personal recommendation** of mine; a folder where you can save all your playing around with models and data.
 
 ### **Where did you find all this?** 
 
-Everything I have explained is extracted from the book "**R packages**" by the most awesome **Hadley Wickham**, the head developer for Rstudio and co-author of packages as awesome as `tidyverse`, `ggplot2`, `pkgdown` etc. The book is absolutely free and you can find it here: https://r-pkgs.org/ and it has many more awesome things I did not develop here! Feel free to check it out! 
+Everything I have explained is extracted from the book "**`R` packages**" by the most awesome **Hadley Wickham**, the head developer for Rstudio and co-author of packages as awesome as `tidyverse`, `ggplot2`, `pkgdown` etc. The book is absolutely free and you can find it here: https://r-pkgs.org/. It has soo many more awesome things I did not develop here! Feel free to check it out! 
 
 <br>
 <center> 

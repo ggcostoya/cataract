@@ -19,6 +19,8 @@ navbar:
   - text: What is GitHub?
     href: articles/github.html
   - text: GitHub Pages
-    href:
+    href: articles/pages.html
+  - text: Resources
+    href: articles/resources.html
   - text: Functions
     href: reference/index.html
