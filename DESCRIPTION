@@ -1,11 +1,13 @@
 Package: cataract
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Project Cataract
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Guillermo Garcia Costoya
+Maintainer: Guillermo Garcia Costoya <guille@nevada.unr.edu>
+Description: A quick guide on how to use GIT, R packages, GitHub and GitHub pages
+    as part of your research process to keep your files and data tidy, tracked, organized
+    and kewl. A package develop to complement the April 30th 2021 EcoLunch talk by 
+    Guillermo Garcia Costoya at the EECB program of the University of Nevada, Reno
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
