@@ -29,7 +29,7 @@ Below is a guide of the contents within this page (Numbers indicate the recommed
 
 ### **Why _Cataract_?** 
 
-This all falls down on the developer of this repository (@ggcostoya) being the geekiest Marvel fan there is. Within Disney+'s *Wandavison*, Project **Cataract**  is the initiative to bring the Avenger **Vision** back to life. One of the recommendations I give in this repository is to name your projects with a single word that is both informative of what is going and funny or interesting enough to motivate you to work on it. I think that `catract` is awesome so that's the name I chose OKAY? Don't judge me daaamn. 
+This all falls down on the developer of this repository (@ggcostoya) being the geekiest Marvel fan there is. Within Disney+'s *Wandavison*, Project **Cataract**  is the initiative to bring the Avenger **Vision** back to life. One of the recommendations I give in this repository is to name your projects with a single word that is both informative of what is going and funny or interesting enough to motivate you to work on it. I think that `cataract` is awesome so that's the name I chose OKAY? Don't judge me daaamn. 
 
 <br>
 <p align="center">
