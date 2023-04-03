@@ -35,7 +35,7 @@ This all falls down on the developer of this repository (@ggcostoya) being the g
 <p align="center">
   <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/01/WandaVision-Paul-Bettany-Vision.jpg" width="700">
   <br>
-  <em> The Avenger Vision having an barbaque on a Sunday morning while taunting the meat with a classic yet effective "Come at me bro".</em>
+  <em> The Avenger Vision having a barbaque on a Sunday morning while taunting the meat with a classic yet effective "Come at me bro".</em>
 </p>
 
 
